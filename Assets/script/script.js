@@ -10,7 +10,6 @@ $(document).ready(function() {
 
     function timeCheck() {
         var currentHour = dayjs().get('hour')
-        console.log(currentHour);
         $(".time-block").each(function() {
             var rowTime = parseInt($(this).attr("id").split("hour")[1]);
 
@@ -40,5 +39,5 @@ $(document).ready(function() {
     $("#hour16 .description").val(localStorage.getItem("hour16"));
     $("#hour17 .description").val(localStorage.getItem("hour17"));
 
-    timeCheck();
+    setInterval(timeCheck(), 3600000);
 })
